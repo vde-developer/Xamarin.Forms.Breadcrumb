@@ -135,6 +135,16 @@ namespace Breadcrumb
         public Breadcrumb()
         {
             InitializeComponent();
+            Reload();
+        }
+
+        /// <summary>
+        /// Reload the control if it currently isn't visible.
+        /// </summary>
+        public void Reload()
+        {
+            if (IsVisible == true)
+                return;
 
             // Event fired the moment ContentView is displayed
             Device.BeginInvokeOnMainThread(async () =>
